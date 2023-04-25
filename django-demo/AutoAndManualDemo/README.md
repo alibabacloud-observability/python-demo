@@ -70,7 +70,16 @@ urlpatterns = [
 opentelemetry-instrument \
     --traces_exporter console,otlp \
     --service_name <your-service-name> \
-    --exporter_otlp_endpoint <endpoint> \
+    --exporter_otlp_traces_headers="authentication=<token>" \
+    --exporter_otlp_traces_endpoint <grpc-endpoint> \
+    python manage.py runserver
+```
+
+```
+opentelemetry-instrument \
+    --traces_exporter console,otlp_proto_http \
+    --service_name <your-service-name> \
+    --exporter_otlp_traces_endpoint <http-endpoint> \
     python manage.py runserver
 ```
 
