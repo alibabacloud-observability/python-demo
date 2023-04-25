@@ -1,7 +1,7 @@
-## Python Demo： 在自动埋点的基础上手动埋点上报Django应用数据
+## Python Demo： 自动埋点并上报Django应用数据 & 自动埋点与手动埋点结合，上报Django应用数据
 
 
-### 1. 自动埋点
+### 1. 自动上报Django应用数据
 1. 下载所需包
 ```
 pip install django
