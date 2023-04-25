@@ -71,8 +71,7 @@ opentelemetry-instrument \
     --traces_exporter console,otlp \
     --service_name <your-service-name> \
     --exporter_otlp_endpoint <endpoint> \
-    python myapp.py
-    
+    python manage.py runserver
 ```
 
 ### 2. 在自动埋点的基础上手动埋点
