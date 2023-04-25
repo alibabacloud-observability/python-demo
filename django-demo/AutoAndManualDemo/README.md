@@ -66,6 +66,7 @@ urlpatterns = [
 
 4. 运行项目
 
+- grpc上报
 ```
 opentelemetry-instrument \
     --traces_exporter console,otlp \
@@ -75,6 +76,7 @@ opentelemetry-instrument \
     python manage.py runserver
 ```
 
+- http上报
 ```
 opentelemetry-instrument \
     --traces_exporter console,otlp_proto_http \
