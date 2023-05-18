@@ -1,7 +1,7 @@
-## Python Demo： 在自动埋点的基础上手动埋点上报Django应用数据
+## Python Demo： 自动埋点并上报Django应用数据 & 自动埋点与手动埋点结合，上报Django应用数据
 
 
-### 1. 自动埋点
+### 1. 自动上报Django应用数据
 1. 下载所需包
 ```
 pip install django
@@ -64,6 +64,26 @@ urlpatterns = [
 
 通过如上配置，就可以自动为Django应用埋点。更多信息，请参考 [OpenTelemetry Python Examples: Django Instrumentation](https://opentelemetry-python.readthedocs.io/en/latest/examples/django/README.html)
 
+4. 运行项目
+
+- grpc上报
+```
+opentelemetry-instrument \
+    --traces_exporter console,otlp \
+    --service_name <your-service-name> \
+    --exporter_otlp_traces_headers="authentication=<token>" \
+    --exporter_otlp_traces_endpoint <grpc-endpoint> \
+    python manage.py runserver
+```
+
+- http上报
+```
+opentelemetry-instrument \
+    --traces_exporter console,otlp_proto_http \
+    --service_name <your-service-name> \
+    --exporter_otlp_traces_endpoint <http-endpoint> \
+    python manage.py runserver
+```
 
 ### 2. 在自动埋点的基础上手动埋点
 
