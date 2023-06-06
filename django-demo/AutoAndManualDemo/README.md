@@ -13,7 +13,11 @@ pip install requests
 
 2. 创建helloworld app
 
-- 在项目中创建helloworld文件夹
+- 创建AutoAndManualDemo项目
+
+ `django-admin startproject AutoAndManualDemo`
+
+- 在项目中创建helloworld app
 
 `python manage.py startapp helloworld`
 
@@ -33,7 +37,7 @@ def get_time():
     return now.strftime("%H:%M:%S")
 ```
 
-- 在helloworld/urls.py中添加代码
+- 创建helloworld/urls.py文件，在urls.py中添加代码
 
 ```python
 from django.urls import path
