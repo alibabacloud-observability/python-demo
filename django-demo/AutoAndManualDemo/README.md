@@ -86,7 +86,7 @@ opentelemetry-instrument \
 
 - 注意：如果运行报错 `CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False.` 但 AutoAndManualDemo/AutoAndManualDemo/settings.py 中的 DEBUG 和 ALLOWED_HOSTS均已正确配置，这是因为使用 opentelemetry-instrument 启动时使用了danjo框架的默认配置文件 （django/conf/global_settings.py）， 因此需要添加 `export DJANGO_SETTINGS_MODULE=AutoAndManualDemo.settings` 环境变量
 
-5. 浏览器中访问 `http://127.0.0.1:8000/helloworld/`，控制台会打印trace，同时也会将trace上报至阿里云可观测链路OpenTelemetry版。如需关闭
+5. 浏览器中访问 `http://127.0.0.1:8000/helloworld/`，控制台会打印trace，同时也会将trace上报至阿里云可观测链路OpenTelemetry版。如需关闭控制台打印trace，只需将--traces_exporter参数配置为“--traces_exporter otlp_proto_http”
 
 
 
